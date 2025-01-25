@@ -14,7 +14,7 @@
     		    }
     			.search-input {
       			padding: 10px;
-      			width: 50%;
+      			width: 40%;
       			border: 2px solid #1f5f6f;
       			border-radius: 5px;
 		    }
@@ -33,7 +33,7 @@
 
 		table {
 		  position: absolute;
-		  left: 320px;
+		  left: 305px;
 		  border-collapse: collapse;
 		  width: 55%;
 		}
@@ -60,7 +60,7 @@
       placeholder="Search for schools..."
     />
 </div>
-<table id="schoolTable">
+<table>
     <thead>
 <tr>
 	<col width="7%">
@@ -71,8 +71,9 @@
 	<th><b>NAME OF<BR>EDUCATION BLOCK</b></th>
 	<th><b>SCHOOL NAME</b></th>
 	<th><b>ACTION</b></th>
-
 </tr>
+    </thead>
+<tbody id="table-body tr">
 <tr>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">SALCHAPRA</td>
@@ -1070,14 +1071,14 @@
 <td style="text-align: center;">NEHRU GIRLS HIGH SCHOOL</td>
 <td style="text-align:center;"><button onclick="alert('Button 1 clicked!')">VIEW</button></td>
 </tr>
-<script>
+  <script>
     function filterTable() {
       const input = document.getElementById('searchInput');
       const filter = input.value.toUpperCase();
-      const table = document.getElementById('schoolTable');
+      const table = document.getElementById('table-body tr');
       const rows = table.getElementsByTagName('tr');
 
-      for (let i = 1; i < rows.length; i++) {
+      for (let i = 0; i < rows.length; i++) {
         const cells = rows[i].getElementsByTagName('td');
         let match = false;
 
