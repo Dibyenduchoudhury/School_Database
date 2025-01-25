@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Schools under Cachar District</title>
 	<style>
 	body {
-			}
+		    }
+    			.search-bar {
+      			margin-bottom: 20px;
+      			display: flex;
+      			justify-content: center;
+    		    }
+    			.search-input {
+      			padding: 10px;
+      			width: 50%;
+      			border: 2px solid #1f5f6f;
+      			border-radius: 5px;
+		    }
 			.button {
 			position: absolute;
 			top: 80px;
@@ -38,7 +51,17 @@
 </head>
 <body>
 	<p align="center"><font><b><font size="12">List of Govt./Provincialised Schools under Cachar District</b></p></font><br><br>
-<table>
+<div class="search-bar">
+    <input
+      type="text"
+      class="search-input"
+      id="searchInput"
+      onkeyup="filterTable()"
+      placeholder="Search for schools..."
+    />
+</div>
+<table id="schoolTable">
+    <thead>
 <tr>
 	<col width="7%">
 	<col width="26%">
@@ -1047,6 +1070,28 @@
 <td style="text-align: center;">NEHRU GIRLS HIGH SCHOOL</td>
 <td style="text-align:center;"><button onclick="alert('Button 1 clicked!')">VIEW</button></td>
 </tr>
+<script>
+    function filterTable() {
+      const input = document.getElementById('searchInput');
+      const filter = input.value.toUpperCase();
+      const table = document.getElementById('schoolTable');
+      const rows = table.getElementsByTagName('tr');
+
+      for (let i = 1; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName('td');
+        let match = false;
+
+        for (let j = 0; j < cells.length - 1; j++) {
+          if (cells[j] && cells[j].innerText.toUpperCase().includes(filter)) {
+            match = true;
+            break;
+          }
+        }
+
+        rows[i].style.display = match ? '' : 'none';
+      }
+    }
+  </script>
 	</body>
 </html>
 
