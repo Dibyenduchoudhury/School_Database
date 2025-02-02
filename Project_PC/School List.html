@@ -30,13 +30,15 @@
 			border-radius: 5px;
 			cursor: pointer;
 		}
-
+		table-container{
+			align-items: center;
+		}
 		table {
-		  position: absolute;
-		  left: 305px;
-		  margin-botton: 20px;
-		  border-collapse: collapse;
-		  width: 55%;
+		  	position: absolute;
+		  	left: 305px;
+		  	margin-bottom: 10px;
+		  	border-collapse: collapse;
+		  	width: 55%;
 		}
 		
 		th, td {
@@ -61,6 +63,7 @@
       placeholder="Search for schools..."
     />
 </div>
+<div class="table-container">
 <table>
     <thead>
 <tr>
@@ -1072,6 +1075,7 @@
 <td style="text-align: center;">NEHRU GIRLS HIGH SCHOOL</td>
 <td style="text-align:center;"><button onclick="alert('Button 1 clicked!')">VIEW</button></td>
 </tr>
+</div>
   <script>
     function filterTable() {
       const input = document.getElementById('searchInput');
