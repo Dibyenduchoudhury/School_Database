@@ -1,75 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Forms</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(120deg, #6a11cb, #2575fc);
-            color: #333;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
+
         .container {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 20px;
-            background: #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        }
-        .header {
+            width: 90%;
+            max-width: 800px;
+            background: #fff;
+            color: #333;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 30px;
             text-align: center;
-            padding: 20px;
-            background: #6a11cb;
-            border-radius: 10px 10px 0 0;
-            color: #ffffff;
+            animation: fadeIn 0.5s ease-in-out;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 15px;
+            border-radius: 8px 8px 0 0;
+        }
+
         .header h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 22px;
+            font-weight: 600;
         }
+
         .description {
-            text-align: center;
-            font-size: 16px;
+            font-size: 14px;
             color: #555;
-            margin: 10px 0 20px;
+            margin: 15px 0;
         }
+
         .form-category {
-            margin-bottom: 20px;
+            margin: 20px 0;
+            text-align: left;
         }
+
         .form-category h2 {
-            font-size: 20px;
+            font-size: 18px;
             color: #6a11cb;
             margin-bottom: 10px;
+            border-left: 4px solid #6a11cb;
+            padding-left: 10px;
         }
+
         .form-list {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
+
         .form-list li {
-            margin: 10px 0;
-            padding: 10px;
-            background: #f9f9f9;
-            border-radius: 5px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 12px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-radius: 6px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
         }
+
+        .form-list li:hover {
+            transform: scale(1.03);
+        }
+
+        .form-list li span {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
         .form-list li a {
             text-decoration: none;
-            color: #2575fc;
+            background: #2575fc;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-size: 14px;
             font-weight: bold;
+            transition: background 0.3s ease;
         }
+
         .form-list li a:hover {
-            text-decoration: underline;
+            background: #1a5dd0;
         }
+
         .footer {
             text-align: center;
-            padding: 10px;
+            padding: 15px;
             margin-top: 20px;
-            font-size: 14px;
+            font-size: 12px;
             color: #777;
         }
     </style>
@@ -77,37 +121,39 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Download Forms</h1>
+            <h1>📄 Download Forms</h1>
         </div>
         <p class="description">Find and download important forms. Click on a form link to start the download.</p>
 
+        <!-- Leave Forms Section -->
         <div class="form-category">
-            <h2>Leave Forms</h2>
+            <h2>📌 Leave Forms</h2>
             <ul class="form-list">
                 <li>
                     <span>Leave Application Form</span>
                     <a href="https://rawcdn.githack.com/Dibyenduchoudhury/School_Database/ff43f00471f5bf7e5a99d87fe813236620eb7a5c/Project_Android/Forms/Leave%20Application%20form.pdf" download>Download</a>
                 </li>
                 <li>
-                    <span>Child Care Leave Application Form</span>
+                    <span>Child Care Leave Application</span>
                     <a href="https://rawcdn.githack.com/Dibyenduchoudhury/School_Database/ff43f00471f5bf7e5a99d87fe813236620eb7a5c/Project_Android/Forms/CHILD%20CARE%20LEAVE%20application.pdf" download>Download</a>
                 </li>
-		<li>
-                    <span>Study Leave Application Form</span>
+                <li>
+                    <span>Study Leave Application</span>
                     <a href="https://rawcdn.githack.com/Dibyenduchoudhury/School_Database/26cd8bd38bb3d0962adc3cffc5e7ae8cbf30fb36/Project_Android/Forms/Leave_Study%20Leave.pdf" download>Download</a>
                 </li>
             </ul>
         </div>
 
+        <!-- NPS Forms Section -->
         <div class="form-category">
-            <h2>National Pension Scheme (NPS) Forms</h2>
+            <h2>💰 National Pension Scheme (NPS) Forms</h2>
             <ul class="form-list">
                 <li>
-                    <span>NPS Subscriber Registration Form</span>
+                    <span>NPS Subscriber Registration</span>
                     <a href="https://rawcdn.githack.com/Dibyenduchoudhury/School_Database/26cd8bd38bb3d0962adc3cffc5e7ae8cbf30fb36/Project_Android/Forms/CSRF%20-1%20Form_0.pdf" download>Download</a>
                 </li>
                 <li>
-                    <span></span>
+                    <span>Reimbursement Claim Form</span>
                     <a href="forms/reimbursement_claim_form.pdf" download>Download</a>
                 </li>
             </ul>
@@ -115,19 +161,22 @@
 
         <!-- Other Forms Section -->
         <div class="form-category">
-            <h2>Other Forms</h2>
+            <h2>📜 Other Forms</h2>
             <ul class="form-list">
                 <li>
                     <span>Parent Feedback Form</span>
                     <a href="forms/parent_feedback_form.pdf" download>Download</a>
                 </li>
                 <li>
-                    <span>School Event Participation Form</span>
+                    <span>School Event Participation</span>
                     <a href="forms/event_participation_form.pdf" download>Download</a>
                 </li>
             </ul>
         </div>
 
+        <div class="footer">
+            &copy; 2025 School Forms | All Rights Reserved
+        </div>
     </div>
 </body>
 </html>
