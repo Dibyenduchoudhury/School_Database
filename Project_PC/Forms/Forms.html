@@ -4,14 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Forms</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        /* Material You Colors */
+        :root {
+            --primary-color: #5E81AC;  /* Blue Gray */
+            --secondary-color: #A3BE8C; /* Soft Green */
+            --accent-color: #88C0D0; /* Teal */
+            --background-color: #ECEFF4; /* Light Grayish Blue */
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            color: #fff;
+            background: var(--background-color);
+            color: var(--text-color);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -21,37 +32,33 @@
         .container {
             width: 90%;
             max-width: 800px;
-            background: #fff;
-            color: #333;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            padding: 30px;
+            background: var(--card-bg);
+            color: var(--text-color);
+            border-radius: 16px;
+            box-shadow: 0 6px 12px var(--shadow-color);
+            padding: 24px;
             text-align: center;
-            animation: fadeIn 0.5s ease-in-out;
+            animation: fadeIn 0.4s ease-in-out;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
+            from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .header {
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            background: var(--primary-color);
             color: white;
-            padding: 15px;
-            border-radius: 8px 8px 0 0;
-        }
-
-        .header h1 {
-            margin: 0;
-            font-size: 22px;
+            padding: 16px;
+            border-radius: 12px 12px 0 0;
+            font-size: 20px;
             font-weight: 600;
         }
 
         .description {
-            font-size: 14px;
+            font-size: 15px;
             color: #555;
-            margin: 15px 0;
+            margin: 12px 0;
         }
 
         .form-category {
@@ -61,10 +68,11 @@
 
         .form-category h2 {
             font-size: 18px;
-            color: #6a11cb;
+            color: var(--secondary-color);
             margin-bottom: 10px;
-            border-left: 4px solid #6a11cb;
-            padding-left: 10px;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 12px;
+            font-weight: 600;
         }
 
         .form-list {
@@ -79,41 +87,43 @@
             align-items: center;
             padding: 12px;
             margin: 8px 0;
-            background: #f8f9fa;
-            border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease-in-out;
+            background: var(--background-color);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px var(--shadow-color);
+            transition: transform 0.2s ease-in-out, background 0.3s;
         }
 
         .form-list li:hover {
-            transform: scale(1.03);
+            transform: scale(1.02);
+            background: var(--accent-color);
+            color: white;
         }
 
         .form-list li span {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 500;
         }
 
         .form-list li a {
             text-decoration: none;
-            background: #2575fc;
+            background: var(--primary-color);
             color: white;
-            padding: 6px 12px;
-            border-radius: 5px;
+            padding: 6px 14px;
+            border-radius: 6px;
             font-size: 14px;
             font-weight: bold;
             transition: background 0.3s ease;
         }
 
         .form-list li a:hover {
-            background: #1a5dd0;
+            background: var(--secondary-color);
         }
 
         .footer {
             text-align: center;
-            padding: 15px;
+            padding: 16px;
             margin-top: 20px;
-            font-size: 12px;
+            font-size: 13px;
             color: #777;
         }
     </style>
@@ -121,7 +131,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>📄 Download Forms</h1>
+            📄 Download Forms
         </div>
         <p class="description">Find and download important forms. Click on a form link to start the download.</p>
 
