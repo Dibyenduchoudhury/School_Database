@@ -1,198 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Downloads</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        /* Material You Colors */
-        :root {
-            --primary-color: #5E81AC;  /* Blue Gray */
-            --secondary-color: #A3BE8C; /* Soft Green */
-            --accent-color: #88C0D0; /* Teal */
-            --background-color: #ECEFF4; /* Light Grayish Blue */
-            --text-color: #333;
-            --card-bg: #ffffff;
-            --shadow-color: rgba(0, 0, 0, 0.1);
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 10px;
-            background: var(--background-color);
-            color: var(--text-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .container {
-            width: 70%;
-            max-width: 800px;
-            background: var(--card-bg);
-            color: var(--text-color);
-            border-radius: 16px;
-            box-shadow: 0 6px 12px var(--shadow-color);
-            padding: 24px;
-            text-align: center;
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .header {
-            background: var(--primary-color);
-            color: white;
-            padding: 16px;
-            border-radius: 12px 12px 0 0;
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        .description {
-            font-size: 15px;
-            color: #555;
-            margin: 12px 0;
-        }
-
-        .form-category {
-            margin: 20px 0;
-            text-align: left;
-        }
-
-        .form-category h2 {
-            font-size: 18px;
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-            border-left: 4px solid var(--secondary-color);
-            padding-left: 12px;
-            font-weight: 600;
-        }
-
-        .form-list {
-            list-style: none;
-            justify-content: center;
-            padding: 0;
-            margin: 0;
-            width: 80%;
-        }
-
-        .form-list li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px;
-            margin: 8px 0;
-            background: var(--background-color);
-            border-radius: 8px;
-            box-shadow: 0 2px 4px var(--shadow-color);
-            transition: transform 0.2s ease-in-out, background 0.3s;
-        }
-
-        .form-list li:hover {
-            transform: scale(1.02);
-            background: var(--accent-color);
-            color: white;
-        }
-
-        .form-list li span {
-            font-size: 15px;
-            font-weight: 500;
-        }
-
-        .form-list li a {
-            text-decoration: none;
-            background: var(--primary-color);
-            color: white;
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
-
-        .form-list li a:hover {
-            background: var(--secondary-color);
-        }
-
-        .footer {
-            text-align: center;
-            padding: 16px;
-            margin-top: 20px;
-            font-size: 13px;
-            color: #777;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Downloads</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #3949ab;       /* A deep blue */
+      --secondary-color: #fbc02d;     /* A warm yellow */
+      --accent-color: #00897b;        /* A teal green */
+      --background-color: #f5f5f5;     /* Light gray background */
+      --card-bg: #ffffff;             /* White cards */
+      --text-color: #333;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--primary-color);
+      color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    
+    .header button {
+      background: var(--secondary-color);
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+    
+    .header button:hover {
+      background: var(--accent-color);
+    }
+    
+    /* Category Sections */
+    .category {
+      margin-bottom: 40px;
+    }
+    
+    .category h2 {
+      margin-bottom: 16px;
+      font-size: 20px;
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 4px;
+    }
+    
+    /* Grid for download items */
+    .form-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    
+    .form-item {
+      background: var(--card-bg);
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .form-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px var(--shadow);
+    }
+    
+    .form-item span {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    
+    .form-item a {
+      align-self: flex-end;
+      text-decoration: none;
+      background: var(--primary-color);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    
+    .form-item a:hover {
+      background: var(--accent-color);
+    }
+    
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 20px;
+      }
+      
+      .header button {
+        font-size: 12px;
+        padding: 8px 16px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            Download
-            <button type="button" style="padding: 10px; background-color: blue; border: none; border-radius: 10px;" onclick="window.location.href='https://www.iscdc.66ghz.com';">Home</button>
-        </div>
-        <div class="form-category">
-            <h2>📜 Archive</h2>
-            <ul class="form-list">
-                <li>
-                    <span>PGT Details</span>
-                        <a href="https://raw.githack.com/Dibyenduchoudhury/School_Database/main/Resources/PGT%20Details.xlsx" download>Download</a>
-                </li>
-                <li>
-                    <span>School-wise amalgamation years</span>
-                        <a href="https://raw.githack.com/Dibyenduchoudhury/School_Database/main/Resources/Schools%20with%20Amalgamation%20Year.xlsx" download>Download</a>
-                </li>
-                <li>
-                    <span>Uniform Size-2025</span>
-                        <a href="https://raw.githack.com/Dibyenduchoudhury/School_Database/main/Resources/Uniform%20Size%20data.xlsx" download>Download</a>
-                </li>                
-                <li>
-                    <span>Vacancy Details- Intermediate posts</span>
-                        <a href="https://raw.githack.com/Dibyenduchoudhury/School_Database/main/Resources/Vacancy%20details%20of%20erstwhile%20ME%20LP%20School,%20amalgamated%20with%20Secondary%20School.xlsx" download>Download</a>
-                </li>
-            </ul>
-        </div>
-        <!-- Leave Forms Section -->
-        <div class="form-category">
-            <h2>📌 Leave Forms</h2>
-            <ul class="form-list">
-                <li>
-                    <span>Leave Application Form</span>
-                    <a href="https://rawcdn.githack.com/Dibyenduchoudhury/School_Database/ff43f00471f5bf7e5a99d87fe813236620eb7a5c/Project_Android/Forms/Leave%20Application%20form.pdf" download>Download</a>
-                </li>
-                <li>
-                    <span>Child Care Leave Application</span>
-                    <a href="https://rawcdn.githack.com/Dibyenduchoudhury/School_Database/ff43f00471f5bf7e5a99d87fe813236620eb7a5c/Project_Android/Forms/CHILD%20CARE%20LEAVE%20application.pdf" download>Download</a>
-                </li>
-                <li>
-                    <span>Study Leave Application</span>
-                    <a href="https://rawcdn.githack.com/Dibyenduchoudhury/School_Database/26cd8bd38bb3d0962adc3cffc5e7ae8cbf30fb36/Project_Android/Forms/Leave_Study%20Leave.pdf" download>Download</a>
-                </li>
-            </ul>
-        </div>
-
-        <!-- NPS Forms Section -->
-        <div class="form-category">
-            <h2>💰 National Pension Scheme (NPS) Forms</h2>
-            <ul class="form-list">
-                <li>
-                    <span>NPS Subscriber Registration</span>
-                    <a href="https://rawcdn.githack.com/Dibyenduchoudhury/School_Database/26cd8bd38bb3d0962adc3cffc5e7ae8cbf30fb36/Project_Android/Forms/CSRF%20-1%20Form_0.pdf" download>Download</a>
-                </li>
-                <li>
-                    <span>Reimbursement Claim Form</span>
-                    <a href="forms/reimbursement_claim_form.pdf" download>Download</a>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Other Forms Section -->
-
+  <div class="container">
+    <div class="header">
+      <h1>Downloads</h1>
+      <button onclick="window.location.href='https://www.iscdc.66ghz.com';">Home</button>
     </div>
+    
+    <!-- Archive Section -->
+    <div class="category">
+      <h2>📜 Archive</h2>
+      <div class="form-list">
+        <div class="form-item">
+          <span>PGT Details(2025)</span>
+          <a href="https://raw.githack.com/Dibyenduchoudhury/School_Database/main/Resources/PGT%20Details.xlsx" download>Download</a>
+        </div>
+        <div class="form-item">
+          <span>School-wise amalgamation years(2025)</span>
+          <a href="https://raw.githack.com/Dibyenduchoudhury/School_Database/main/Resources/Schools%20with%20Amalgamation%20Year.xlsx" download>Download</a>
+        </div>
+        <div class="form-item">
+          <span>Uniform Size(2025)</span>
+          <a href="https://raw.githack.com/Dibyenduchoudhury/School_Database/main/Resources/Uniform%20Size%20data.xlsx" download>Download</a>
+        </div>
+        <div class="form-item">
+          <span>Vacancy Details- Intermediate posts(2025)</span>
+          <a href="https://raw.githack.com/Dibyenduchoudhury/School_Database/main/Resources/Vacancy%20details%20of%20erstwhile%20ME%20LP%20School,%20amalgamated%20with%20Secondary%20School.xlsx" download>Download</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Leave Forms Section -->
+    <div class="category">
+      <h2>📌 Leave Forms</h2>
+      <div class="form-list">
+        <div class="form-item">
+          <span>Leave Application Form</span>
+          <a href="https://rawcdn.githack.com/Dibyenduchoudhury/School_Database/ff43f00471f5bf7e5a99d87fe813236620eb7a5c/Project_Android/Forms/Leave%20Application%20form.pdf" download>Download</a>
+        </div>
+        <div class="form-item">
+          <span>Child Care Leave Application</span>
+          <a href="https://rawcdn.githack.com/Dibyenduchoudhury/School_Database/ff43f00471f5bf7e5a99d87fe813236620eb7a5c/Project_Android/Forms/CHILD%20CARE%20LEAVE%20application.pdf" download>Download</a>
+        </div>
+        <div class="form-item">
+          <span>Study Leave Application</span>
+          <a href="https://rawcdn.githack.com/Dibyenduchoudhury/School_Database/26cd8bd38bb3d0962adc3cffc5e7ae8cbf30fb36/Project_Android/Forms/Leave_Study%20Leave.pdf" download>Download</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- NPS Forms Section -->
+    <div class="category">
+      <h2>💰 National Pension Scheme (NPS) Forms</h2>
+      <div class="form-list">
+        <div class="form-item">
+          <span>NPS Subscriber Registration</span>
+          <a href="https://rawcdn.githack.com/Dibyenduchoudhury/School_Database/26cd8bd38bb3d0962adc3cffc5e7ae8cbf30fb36/Project_Android/Forms/CSRF%20-1%20Form_0.pdf" download>Download</a>
+        </div>
+        <div class="form-item">
+          <span>Reimbursement Claim Form</span>
+          <a href="forms/reimbursement_claim_form.pdf" download>Download</a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
 </body>
 </html>
