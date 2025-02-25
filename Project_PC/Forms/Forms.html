@@ -1,189 +1,203 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Downloads</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-color: #3949ab;
-      --secondary-color: #fbc02d;
-      --accent-color: #00897b;
-      --background-color: #f5f5f5;
-      --card-bg: #ffffff;
-      --text-color: #333;
-      --shadow: rgba(0, 0, 0, 0.1);
-    }
-    
-    * {
-      box-sizing: border-box;
-    }
-    
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: var(--background-color);
-      color: var(--text-color);
-      padding: 20px;
-    }
-    
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--primary-color);
-      color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-    
-    .header h1 {
-      margin: 0;
-      font-size: 24px;
-    }
-    
-    .header button {
-      background: var(--secondary-color);
-      border: none;
-      color: #000;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background 0.3s ease;
-    }
-    
-    .header button:hover {
-      background: var(--accent-color);
-    }
-
-    /* Search Bar */
-    .search-bar {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .search-bar input {
-      width: 100%;
-      max-width: 400px;
-      padding: 10px;
-      border: 2px solid var(--primary-color);
-      border-radius: 6px;
-      font-size: 16px;
-    }
-
-    /* Upload Form */
-    .upload-section {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .upload-section input {
-      margin-top: 10px;
-    }
-
-    /* File List */
-    .form-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    .form-item {
-      background: var(--card-bg);
-      padding: 16px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px var(--shadow);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .form-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 12px var(--shadow);
-    }
-
-    .form-item span {
-      font-size: 16px;
-      font-weight: 500;
-      margin-bottom: 12px;
-    }
-
-    .form-item a {
-      align-self: flex-end;
-      text-decoration: none;
-      background: var(--primary-color);
-      color: #fff;
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-
-    .form-item a:hover {
-      background: var(--accent-color);
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="header">
-      <h1>Downloads</h1>
-      <button onclick="window.location.href='https://www.iscdc.66ghz.com';">Home</button>
-    </div>
-
-    <!-- Search Bar -->
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search files..." onkeyup="searchFiles()">
-    </div>
-
-    <!-- Upload Form -->
-    <div class="upload-section">
-      <form action="upload.php" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" required>
-        <button type="submit" name="upload">Upload File</button>
-      </form>
-    </div>
-
-    <!-- Archive Section -->
-    <div class="category">
-      <h2>📜 Archive</h2>
-      <div class="form-list" id="fileList">
-        <!-- Existing files here -->
-        <?php
-          $files = scandir("uploads/");
-          foreach ($files as $file) {
-            if ($file !== "." && $file !== "..") {
-              echo "<div class='form-item'>";
-              echo "<span>$file</span>";
-              echo "<a href='uploads/$file' download>Download</a>";
-              echo "</div>";
-            }
-          }
-        ?>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function searchFiles() {
-      let input = document.getElementById("searchInput").value.toLowerCase();
-      let items = document.getElementsByClassName("form-item");
-
-      for (let item of items) {
-        let text = item.getElementsByTagName("span")[0].innerText.toLowerCase();
-        item.style.display = text.includes(input) ? "block" : "none";
-      }
-    }
-  </script>
-</body>
-</html>
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  
+  <title>Downloads</title>  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">  
+  <style>  
+    :root {  
+      --primary-color: #3949ab;       /* A deep blue */  
+      --secondary-color: #fbc02d;     /* A warm yellow */  
+      --accent-color: #00897b;        /* A teal green */  
+      --background-color: #f5f5f5;     /* Light gray background */  
+      --card-bg: #ffffff;             /* White cards */  
+      --text-color: #333;  
+      --shadow: rgba(0, 0, 0, 0.1);  
+    }  
+      
+    * {  
+      box-sizing: border-box;  
+    }  
+      
+    body {  
+      margin: 0;  
+      font-family: 'Inter', sans-serif;  
+      background-color: var(--background-color);  
+      color: var(--text-color);  
+      padding: 20px;  
+    }  
+      
+    .container {  
+      max-width: 1000px;  
+      margin: 0 auto;  
+    }  
+      
+    /* Header */  
+    .header {  
+      display: flex;  
+      justify-content: space-between;  
+      align-items: center;  
+      background: var(--primary-color);  
+      color: #fff;  
+      padding: 20px;  
+      border-radius: 8px;  
+      margin-bottom: 20px;  
+    }  
+      
+    .header h1 {  
+      margin: 0;  
+      font-size: 24px;  
+    }  
+      
+    .header button {  
+      background: var(--secondary-color);  
+      border: none;  
+      color: #000;  
+      padding: 10px 20px;  
+      border-radius: 6px;  
+      cursor: pointer;  
+      font-size: 14px;  
+      transition: background 0.3s ease;  
+    }  
+      
+    .header button:hover {  
+      background: var(--accent-color);  
+    }  
+      
+    /* Category Sections */  
+    .category {  
+      margin-bottom: 40px;  
+    }  
+      
+    .category h2 {  
+      margin-bottom: 16px;  
+      font-size: 20px;  
+      color: var(--primary-color);  
+      border-bottom: 2px solid var(--accent-color);  
+      padding-bottom: 4px;  
+    }  
+      
+    /* Grid for download items */  
+    .form-list {  
+      display: grid;  
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));  
+      gap: 20px;  
+    }  
+      
+    .form-item {  
+      background: var(--card-bg);  
+      padding: 16px;  
+      border-radius: 8px;  
+      box-shadow: 0 2px 6px var(--shadow);  
+      display: flex;  
+      flex-direction: column;  
+      justify-content: space-between;  
+      transition: transform 0.3s ease, box-shadow 0.3s ease;  
+    }  
+      
+    .form-item:hover {  
+      transform: translateY(-5px);  
+      box-shadow: 0 4px 12px var(--shadow);  
+    }  
+      
+    .form-item span {  
+      font-size: 16px;  
+      font-weight: 500;  
+      margin-bottom: 12px;  
+    }  
+      
+    .form-item a {  
+      align-self: flex-end;  
+      text-decoration: none;  
+      background: var(--primary-color);  
+      color: #fff;  
+      padding: 8px 16px;  
+      border-radius: 6px;  
+      font-weight: 600;  
+      transition: background 0.3s ease;  
+    }  
+      
+    .form-item a:hover {  
+      background: var(--accent-color);  
+    }  
+      
+    @media (max-width: 600px) {  
+      .header h1 {  
+        font-size: 20px;  
+      }  
+        
+      .header button {  
+        font-size: 12px;  
+        padding: 8px 16px;  
+      }  
+    }  
+  </style>  
+</head>  
+<body>  
+  <div class="container">  
+    <div class="header">  
+      <h1>Downloads</h1>  
+      <button onclick="window.location.href='https://www.iscdc.66ghz.com';">Home</button>  
+    </div>  
+      
+    <!-- Archive Section -->  
+    <div class="category">  
+      <h2>📜 Archive</h2>  
+      <div class="form-list">  
+        <div class="form-item">  
+          <span>PGT Details(2025)</span>  
+          <a href="https://raw.githack.com/Dibyenduchoudhury/School_Database/main/Resources/PGT%20Details.xlsx" download>Download</a>  
+        </div>  
+        <div class="form-item">  
+          <span>School-wise amalgamation years(2025)</span>  
+          <a href="https://raw.githack.com/Dibyenduchoudhury/School_Database/main/Resources/Schools%20with%20Amalgamation%20Year.xlsx" download>Download</a>  
+        </div>  
+        <div class="form-item">  
+          <span>Uniform Size(2025)</span>  
+          <a href="https://raw.githack.com/Dibyenduchoudhury/School_Database/main/Resources/Uniform%20Size%20data.xlsx" download>Download</a>  
+        </div>  
+        <div class="form-item">  
+          <span>Vacancy Details- Intermediate posts(2025)</span>  
+          <a href="https://raw.githack.com/Dibyenduchoudhury/School_Database/main/Resources/Vacancy%20details%20of%20erstwhile%20ME%20LP%20School,%20amalgamated%20with%20Secondary%20School.xlsx" download>Download</a>  
+        </div>  
+      </div>  
+    </div>  
+      
+    <!-- Leave Forms Section -->  
+    <div class="category">  
+      <h2>📌 Leave Forms</h2>  
+      <div class="form-list">  
+        <div class="form-item">  
+          <span>Leave Application Form</span>  
+          <a href="https://rawcdn.githack.com/Dibyenduchoudhury/School_Database/ff43f00471f5bf7e5a99d87fe813236620eb7a5c/Project_Android/Forms/Leave%20Application%20form.pdf" download>Download</a>  
+        </div>  
+        <div class="form-item">  
+          <span>Child Care Leave Application</span>  
+          <a href="https://rawcdn.githack.com/Dibyenduchoudhury/School_Database/ff43f00471f5bf7e5a99d87fe813236620eb7a5c/Project_Android/Forms/CHILD%20CARE%20LEAVE%20application.pdf" download>Download</a>  
+        </div>  
+        <div class="form-item">  
+          <span>Study Leave Application</span>  
+          <a href="https://rawcdn.githack.com/Dibyenduchoudhury/School_Database/26cd8bd38bb3d0962adc3cffc5e7ae8cbf30fb36/Project_Android/Forms/Leave_Study%20Leave.pdf" download>Download</a>  
+        </div>  
+      </div>  
+    </div>  
+      
+    <!-- NPS Forms Section -->  
+    <div class="category">  
+      <h2>💰 National Pension Scheme (NPS) Forms</h2>  
+      <div class="form-list">  
+        <div class="form-item">  
+          <span>NPS Subscriber Registration</span>  
+          <a href="https://rawcdn.githack.com/Dibyenduchoudhury/School_Database/26cd8bd38bb3d0962adc3cffc5e7ae8cbf30fb36/Project_Android/Forms/CSRF%20-1%20Form_0.pdf" download>Download</a>  
+        </div>  
+        <div class="form-item">  
+          <span>Reimbursement Claim Form</span>  
+          <a href="forms/reimbursement_claim_form.pdf" download>Download</a>  
+        </div>  
+      </div>  
+    </div>  
+      
+  </div>  
+</body>  
+</html>      add a search bar below header also can we provide a upload button to upload any file. And that file will show under the archive section with its name and download option
