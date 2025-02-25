@@ -64,10 +64,10 @@
       background: var(--accent-color);
     }
 
-    /* Search bar */
+    /* Search Bar */
     .search-bar {
-      margin-bottom: 20px;
       text-align: center;
+      margin-bottom: 20px;
     }
 
     .search-bar input {
@@ -79,7 +79,7 @@
       font-size: 16px;
     }
 
-    /* Upload form */
+    /* Upload Form */
     .upload-section {
       text-align: center;
       margin-bottom: 20px;
@@ -180,4 +180,10 @@
       let items = document.getElementsByClassName("form-item");
 
       for (let item of items) {
-        let text = item
+        let text = item.getElementsByTagName("span")[0].innerText.toLowerCase();
+        item.style.display = text.includes(input) ? "block" : "none";
+      }
+    }
+  </script>
+</body>
+</html>
