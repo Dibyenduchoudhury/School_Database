@@ -969,28 +969,28 @@
 </tr>
 </tbody>
 	</div>
-  <script>
-    function filterTable() {
-      const input = document.getElementById('searchInput');
-      const filter = input.value.toUpperCase();
-      const table = document.getElementById('table-body tr');
-      const rows = table.getElementsByTagName('tr');
+<script>
+  function filterTable() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toUpperCase();
+    const tableBody = document.getElementById('table-body'); // Get table body
+    const rows = tableBody.getElementsByTagName('tr'); // Get all rows
 
-      for (let i = 0; i < rows.length; i++) {
-        const cells = rows[i].getElementsByTagName('td');
-        let match = false;
+    for (let i = 0; i < rows.length; i++) {
+      const cells = rows[i].getElementsByTagName('td');
+      let match = false;
 
-        for (let j = 0; j < cells.length - 1; j++) {
-          if (cells[j] && cells[j].innerText.toUpperCase().includes(filter)) {
-            match = true;
-            break;
-          }
+      for (let j = 0; j < cells.length; j++) { // Iterate through all columns
+        if (cells[j] && cells[j].innerText.toUpperCase().includes(filter)) {
+          match = true;
+          break;
         }
-
-        rows[i].style.display = match ? '' : 'none';
       }
+
+      rows[i].style.display = match ? '' : 'none';
     }
-  </script>
+  }
+</script>
 	</body>
 </html>
 
