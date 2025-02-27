@@ -973,7 +973,7 @@
   function filterTable() {
     const input = document.getElementById('searchInput');
     const filter = input.value.toUpperCase();
-    const tableBody = document.getElementById('table-body'); // Get table body
+    const tableBody = document.getElementById('table-body-tr'); // Get table body
     const rows = tableBody.getElementsByTagName('tr'); // Get all rows
 
     for (let i = 0; i < rows.length; i++) {
