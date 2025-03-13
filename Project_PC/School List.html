@@ -4,52 +4,96 @@
 	<meta charset="UTF-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Schools under Cachar District</title>
-	<style>
-		body {
-			font-family: Poppins, sans-serif;
-            		margin: 0;
-            		padding: 20px;
-            		background-color: #f4f4f9;
-		}
-        	.header {
-            		text-align: center;
-            		margin-bottom: 50px;
-        	}
-        	.header h1 {
-            		font-size: 2.5em;
-            		color: #333;    
-		}	
-    		.search-bar {
-      			margin-bottom: 20px;
-      			display: flex;
-      			justify-content: center;
-    		}
-    		.search-input {
-      			padding: 10px;
-      			width: 50%;
-      			border: 2px solid #1f5f6f;
-      			border-radius: 5px;
-		}
-		table {
-	    		margin: 20px auto;
-            		width: 75%;
-            		border-collapse: collapse;
-            		margin-top: 20px;
-		}
-		
-		th, td {
-		  	border: 1px solid #dddddd;
-		  	padding: 12px;
-		  	text-align: centre;
-		}
-		th {
-            		background-color: #007bff;
-            		color: #ffffff;
-        	}
-        		tr:nth-child(even) {
-            		background-color: #f2f2f2;
-        	}
-	</style>
+<style>
+	body {
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-input {
+    padding: 10px;
+    width: 50%;
+    border: 2px solid #1f5f6f;
+    border-radius: 5px;
+}
+
+/* Table Styling */
+table {
+    margin: 20px auto;
+    width: 75%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Responsive Design for Mobile */
+@media screen and (max-width: 768px) {
+    .search-input {
+        width: 80%; /* Increase input width for smaller screens */
+    }
+
+    table {
+        width: 100%; /* Make the table take full width */
+    }
+
+    th, td {
+        padding: 8px; /* Reduce padding for better fit */
+        font-size: 14px; /* Adjust text size */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header h1 {
+        font-size: 1.8em; /* Reduce heading size */
+    }
+
+    .search-input {
+        width: 90%;
+        padding: 8px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 6px;
+        font-size: 12px; /* Further reduce text size */
+    }
+}
+</style>
 </head>
 <body>
 	<div class="header">
