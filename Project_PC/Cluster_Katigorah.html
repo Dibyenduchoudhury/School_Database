@@ -62,6 +62,22 @@
                 font-size: 12px;
             }
         }
+/* Dark Mode (Using Media Query) */@media (prefers-color-scheme: dark) {
+
+body {
+background-color: #121212; color: #ffffff; }
+
+table {
+background-color: #lelele; color: #ffffff;
+
+}
+
+th {
+background-color: #333; }
+tr:nth-child(even) {
+background-color: #222; }
+
+}
 	</style>
 </head>
 <p><h1><font><b><font size="6">KATIGORAH BLOCK</b></font></h1></p>
@@ -555,31 +571,26 @@
 </tr>
 </table>
 </head>
-<script>
-document.addEventListener
-("DOMContentLoaded", function () {
-function applyDarkMode() {
+ <script>
 
-// Check the system's color
+function apply Theme() {
 
-scheme preference
-const isDark = window.matchMedia ('(prefers-color-scheme: dark)').matches;
-element
+const darkMode =
 
-// Toggle dark mode on the body
-document.body.classList.toggle ("dark-mode", isDark);
+window.matchMedia('(prefers-color-scheme:
+
+dark)).matches; document.body.classList.toggle('dark-mode', darkMode);
+
 }
 
-// Apply dark mode on initial load
-applyDarkMode();
+// Apply theme on page load
 
-// Listen for changes to the color scheme and update dark mode accordingly
+applyTheme();
 
-window.matchMedia('
-(prefers-color-scheme: dark)')
-.addEventListener('change',
-applyDarkMode);
-});
+// Listen for theme changes
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', apply Theme);
+
 </script>
 
 </html>
