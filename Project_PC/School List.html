@@ -11,6 +11,11 @@
     padding: 5px;
     background-color: #f4f4f9;
 }
+	/* Dark mode styles */
+.dark-mode {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+}
 
 .header {
     text-align: center;
@@ -21,6 +26,9 @@
 .header h1 {
     font-size: 2em;
     color: #333;
+}
+	.dark-mode .header h1 {
+    color: #ffffff;
 }
 
 .home-button {
@@ -44,6 +52,13 @@
     background-color: #eb984e;
     transform: scale(1.1)
 }
+	.dark-mode .home-button {
+    background: #4e342e;
+    color: white;
+}
+.dark-mode .home-button:hover {
+    background-color: #6d4c41;
+}
 
 .search-bar {
     margin-bottom: 20px;
@@ -57,6 +72,11 @@
     border: 2px solid #1f5f6f;
     border-radius: 15px;
 }
+	.dark-mode .search-input {
+    background: #333;
+    color: white;
+    border: 2px solid #ffffff;
+}
 
 table {
     margin: 20px auto;
@@ -64,20 +84,33 @@ table {
     border-collapse: collapse;
     margin-top: 20px;
 }
+	.dark-mode table {
+    background-color: #1e1e1e;
+    color: white;
+}
 
 th, td {
     border: 1px solid #dddddd;
     padding: 12px;
     text-align: center;
 }
+	.dark-mode th, .dark-mode td {
+    border: 1px solid #555;
+}
 
 th {
     background-color: #007bff;
     color: #ffffff;
 }
+	.dark-mode th {
+    background-color: #444;
+}
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+	.dark-mode tr:nth-child(even) {
+    background-color: #2a2a2a;
 }
 
 /* Responsive Design for Mobile */
