@@ -1086,15 +1086,33 @@
 	</div>
 <script>
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const body = document.body;
+document.addEventListener("DOMContentLoaded", function () {
+      function applyDarkMode() {
+        // Check the system's color scheme preference
+        const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        // Toggle dark mode on the body element
+        document.body.classList.toggle("dark-mode", isDark);
+        
+      }
+      
+      // Apply dark mode on initial load
+      applyDarkMode();
+      
+      // Listen for changes to the color scheme and update dark mode accordingly
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyDarkMode);
 
-        // Check if dark mode is enabled in localStorage
-        const darkMode = localStorage.getItem("darkMode");
+      function applyDarkMode() {
+    // Check if running inside WebView (APK)
+    const isWebView = navigator.userAgent.includes("wv") || navigator.userAgent.includes("Android");
 
-        if (darkMode === "enabled") {
-            body.classList.add("dark-mode");
-        }
+    if (isWebView) {
+        const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.body.classList.toggle("dark-mode", isDark);
+    } else {
+        document.body.classList.remove("dark-mode"); // Always light mode in browsers
+    }
+}
+
     });
 
   function filterTable() {
