@@ -573,23 +573,34 @@ background-color: #222; }
 </head>
  <script>
 
-function apply Theme() {
+document.addEventListener("DOMContentLoaded", function () {
+      function applyDarkMode() {
+        // Check the system's color scheme preference
+        const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        // Toggle dark mode on the body element
+        document.body.classList.toggle("dark-mode", isDark);
+        
+      }
+      
+      // Apply dark mode on initial load
+      applyDarkMode();
+      
+      // Listen for changes to the color scheme and update dark mode accordingly
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyDarkMode);
 
-const darkMode =
+      function applyDarkMode() {
+    // Check if running inside WebView (APK)
+    const isWebView = navigator.userAgent.includes("wv") || navigator.userAgent.includes("Android");
 
-window.matchMedia('(prefers-color-scheme:
-
-dark)).matches; document.body.classList.toggle('dark-mode', darkMode);
-
+    if (isWebView) {
+        const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.body.classList.toggle("dark-mode", isDark);
+    } else {
+        document.body.classList.remove("dark-mode"); // Always light mode in browsers
+    }
 }
 
-// Apply theme on page load
-
-applyTheme();
-
-// Listen for theme changes
-
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', apply Theme);
+    });
 
 </script>
 
