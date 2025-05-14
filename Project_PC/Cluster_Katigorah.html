@@ -49,6 +49,34 @@
 .dark-mode tr:nth-child(even) {
     background-color: #222 !important;
 }
+        .home-button {
+                    position: absolute;
+                    top: 15px;
+                    right: 10px;
+                    display: block;
+                    text-align: center;
+                    color: white;
+                    padding: 8px 8px;
+                    text-decoration: none;
+                    font-size: 16px;
+                    background: #4A90E2;
+                    border-radius: 12px;
+                    margin-bottom: 20px;
+                    width: 60px;
+                    cursor: pointer;
+        }
+
+        .home-button:hover {
+                    background-color: #eb984e;
+                    transform: scale(1.1)
+        }
+        .dark-mode .home-button {
+                    background: #342d5a;
+                    color: white;
+        }
+        .dark-mode .home-button:hover {
+                    background-color: #6d4c41;
+        }
 		/* Responsive adjustments */
         @media screen and (max-width: 768px) {
             body {
